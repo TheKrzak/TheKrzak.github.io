@@ -44,6 +44,8 @@ h1, h2 {
   border-radius: 20px;
   margin: 20px 0;
   overflow: hidden;
+  max-width: 100%;
+  height: auto;
 }
 
 .main-footer {
