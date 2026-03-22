@@ -1,0 +1,96 @@
+body {
+  background-color: #f0f2f5;
+  color: #333;
+  font-family: Segoe UI;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.main-header {
+  background: linear-gradient(90deg, #1a2a6c, #b21f1f);
+  color: white;
+  padding: 1.5rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+  margin: 0;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.wrapper {
+  max-width: 1100px;
+  margin: 2rem auto;
+  display: flex;
+  gap: 30px;
+  padding: 0 20px;
+}
+
+main {
+  flex: 3;
+  background: white;
+  padding: 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.image {
+  background: #eee;
+  margin: 20px 0;
+  max-width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd;
+  color: #888;
+}
+
+.cards {
+  display: flex;
+  gap: 15px;
+  margin: 20px 0; }
+
+.card {
+  flex: 1;
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+.sidebar {
+  flex: 1;
+  background: #e9ecef;
+  padding: 20px;
+  border-radius: 5px;
+  height: fit-content;
+}
+
+.main-footer {
+  text-align: center;
+  padding: 3rem;
+  background: #222;
+  color: white;
+  margin-top: 2rem;
+}
+
+@media (max-width: 375px) {
+  .wrapper, .main-header, .cards { flex-direction: column; text-align: center; }
+  .nav-links { padding: 0; gap: 10px; margin-top: 15px; }
+  main { padding: 15px; }
+}
