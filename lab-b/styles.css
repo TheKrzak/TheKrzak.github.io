@@ -1,0 +1,74 @@
+body {
+  background-color: lightgreen;
+}
+
+.container {
+  width: 60%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: lightblue;
+  border-radius: 20px;
+  border-style: solid;
+  display: flex;
+  flex-direction: column;
+}
+
+.searchBar, .addBar {
+  padding: 10px;
+}
+#searchBar {
+  width: calc(100% - 80px);
+}
+#toDoBar {
+  width: calc(100% - 190px);
+}
+
+
+#searchButton, #saveButton {
+  width: 60px;
+}
+#datePicker {
+  width: 100px;
+}
+
+#searchBar {
+
+}
+
+.toDoList ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.toDoList li {
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+}
+
+.toDoList li input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.toDoList li span {
+  flex-grow: 1;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: red;
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.delete-mode {
+  background-color: red;
+  color: white;
+}
+
+mark {
+  background-color: yellow;
+  font-weight: bold;
+}
