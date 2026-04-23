@@ -1,308 +1,171 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
-    padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f6f9;
+  padding: 20px;
 }
 
 .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    max-width: 1400px;
-    margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 1300px;
+  margin: 0 auto;
 }
 
-/* MAP SECTION */
+/* MAPA */
 .map-section {
-    display: flex;
-    flex-direction: column;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .map-controls {
-    display: flex;
-    gap: 10px;
-    padding: 15px;
-    background: #f8f9fa;
-    flex-wrap: wrap;
-    align-items: center;
-    border-bottom: 2px solid #e9ecef;
+  display: flex;
+  gap: 10px;
+  padding: 15px;
+  background: #fff;
+  border-bottom: 1px solid #eaeaea;
+  align-items: center;
 }
 
 .btn {
-    padding: 10px 16px;
-    border: none;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 6px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  color: white;
+  transition: 0.2s;
 }
 
-.btn-location {
-    background: #667eea;
-    color: white;
-}
-
-.btn-location:hover {
-    background: #5568d3;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
-}
-
-.btn-download {
-    background: #48bb78;
-    color: white;
-}
-
-.btn-download:hover {
-    background: #38a169;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(72, 187, 120, 0.4);
-}
-
-.btn-satellite {
-    background: #ed8936;
-    color: white;
-}
-
-.btn-satellite:hover {
-    background: #dd6b20;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(237, 137, 54, 0.4);
-}
-
-.btn-satellite.active {
-    background: #c05621;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.btn:active {
-    transform: translateY(0);
-}
+.btn-location { background: #4a90e2; }
+.btn-location:hover { background: #357abd; }
+.btn-download { background: #50c878; }
+.btn-download:hover { background: #3ea060; }
 
 .coordinates-display {
-    margin-left: auto;
-    padding: 8px 12px;
-    background: white;
-    border-radius: 4px;
-    font-size: 13px;
-    color: #2d3748;
-    min-width: 200px;
-    text-align: right;
+  margin-left: auto;
+  font-family: monospace;
+  background: #f8f9fa;
+  padding: 6px 12px;
+  border-radius: 4px;
+  color: #444;
 }
 
 .map-container {
-    flex: 1;
-    min-height: 600px;
-    position: relative;
+  width: 600px;
+  height: 600px;
+  margin: 0 auto;
 }
 
-.leaflet-container {
-    height: 100%;
-    border-radius: 0;
-}
-
-/* PUZZLE SECTION */
 .puzzle-container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    min-height: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.puzzle-board-section {
-    display: flex;
-    flex-direction: column;
-    background: #f9fafb;
-    border: 2px solid #e9ecef;
-    border-radius: 8px;
-    padding: 15px;
-    flex: 1;
+.puzzle-board-section, .puzzle-pool-section {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
-.puzzle-board-section h2 {
-    color: #2d3748;
-    margin-bottom: 10px;
-    font-size: 18px;
+.board-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
 }
 
-.puzzle-pool-section {
-    display: flex;
-    flex-direction: column;
-    background: #f0f4ff;
-    border: 2px dashed #cbd5e0;
-    border-radius: 8px;
-    padding: 15px;
-    min-height: 150px;
-}
-
-.puzzle-pool-section h2 {
-    color: #667eea;
-    margin-bottom: 10px;
-    font-size: 18px;
-}
-
-.puzzle-pool {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    align-content: flex-start;
-}
-
-.puzzle-pool .puzzle-slot {
-    width: 70px;
-    height: 70px;
-    min-width: 70px;
-    min-height: 70px;
-}
-
-.puzzle-info {
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-    padding: 10px;
-    background: #f0f4ff;
-    border-radius: 6px;
+.board-header h2, .puzzle-pool-section h2 {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 0;
 }
 
 .progress-info {
-    font-size: 14px;
-    font-weight: 600;
-    color: #667eea;
+  font-weight: bold;
+  color: #4a90e2;
+  background: #eef5ff;
+  padding: 5px 10px;
+  border-radius: 4px;
 }
 
 .puzzle-board {
-    flex: 1;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0;
-    padding: 15px;
-    background: #f9fafb;
-    border: 2px dashed #cbd5e0;
-    border-radius: 8px;
-    min-height: 400px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 0;
+  background: #ddd;
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 1;
+  margin: 0 auto;
+  border: 2px solid #ccc;
 }
 
-.puzzle-slot {
-    position: relative;
-    background: white;
-    border: 0.5px solid #e2e8f0;
-    border-radius: 0;
-    aspect-ratio: 1;
-    cursor: grab;
-    transition: all 0.2s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+.puzzleField {
+  background: #f8f9fa;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1;
+  border: 1px dashed #ccc;
+  display: block;
+  overflow: hidden;
+  transition: background 0.2s;
 }
 
-.puzzle-slot:hover {
-    border-color: #667eea;
-    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
+.puzzleField.drag-over {
+  background: #d1e7dd;
+  border: 1px solid #198754;
 }
 
-.puzzle-slot.dragging {
-    opacity: 0.5;
-    cursor: grabbing;
+.puzzleField canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
 }
 
-.puzzle-slot.placed {
-    border-color: #48bb78;
-    background: #f0fdf4;
+.puzzle-pool {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  min-height: 150px;
+  background: #fafafa;
+  border: 2px dashed #d1d1d1;
+  padding: 10px;
 }
 
-.puzzle-slot img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    pointer-events: none;
+.puzzle-pool canvas {
+  width: calc(25% - 5px);
+  height: auto;
+  cursor: grab;
+  transition: transform 0.1s;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-
-/* DRAG STYLES */
-.puzzle-slot.drag-over {
-    background: #f0fdf4;
-    border-color: #48bb78;
-    box-shadow: inset 0 0 8px rgba(72, 187, 120, 0.2);
+.puzzle-pool canvas:hover {
+  transform: scale(1.05);
+  z-index: 10;
+  position: relative;
 }
 
-.puzzle-slot.correct-position {
-    animation: correctPlacement 0.6s ease;
+.puzzle.dragging {
+  opacity: 0.5;
 }
 
-@keyframes correctPlacement {
-    0% {
-        transform: scale(1);
-        border-color: #48bb78;
-    }
-    50% {
-        transform: scale(1.05);
-    }
-    100% {
-        transform: scale(1);
-        border-color: #48bb78;
-    }
-}
-
-/* RESPONSIVE */
 @media (max-width: 1024px) {
-    .container {
-        grid-template-columns: 1fr;
-    }
-
-    .map-container {
-        min-height: 400px;
-    }
-}
-
-@media (max-width: 768px) {
-    .map-controls {
-        flex-direction: column;
-    }
-
-    .coordinates-display {
-        margin-left: 0;
-        width: 100%;
-        text-align: center;
-    }
-
-    .puzzle-board {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* ANIMATIONS */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.map-section,
-.puzzle-section {
-    animation: fadeIn 0.5s ease;
+  .container { grid-template-columns: 1fr; }
+  .map-container { width: 100%; height: 500px; }
 }
