@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div style="padding: 20px;">
+    <h2>Główna lista pojazdów (CRUD)</h2>
+
+    <div style="margin-top: 20px; margin-bottom: 20px;">
+        <a href="{{ url_for('dodaj') }}" style="padding: 10px 15px; background-color: #007bff; color: white; text-decoration: none; font-weight: bold; border-radius: 4px;">
+            ➕ Dodaj nowy samochód
+        </a>
+    </div>
+
+    <table border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 100%; margin-top: 20px;">
+        <thead>
+            <tr style="background-color: #f2f2f2;">
+                <th>ID</th>
+                <th>Marka (Brand)</th>
+                <th>Model</th>
+                <th>Rok produkcji (Year)</th>
+                <th>Akcja</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for car in items %}
+            <tr>
+                <td>{{ car['id'] }}</td>
+                <td>{{ car['Brand'] }}</td>
+                <td>{{ car['Model'] }}</td>
+                <td>{{ car['Year'] }}</td>
+                <td>
+                    <a href="{{ url_for('pokaz', item_id=car['id']) }}">🔎 Podgląd</a> |
+
+                    <a href="{{ url_for('edytuj', item_id=car['id']) }}">✏️ Edytuj</a> |
+
+                    <form action="{{ url_for('usun', item_id=car['id']) }}" method="POST" style="display:inline;" onsubmit="return confirm('Czy na pewno chcesz usunąć ten samochód z bazy danych?');">
+                        <button type="submit" style="color: red; background: none; border: none; padding: 0; cursor: pointer; text-decoration: underline;">
+                            🗑️ Usuń
+                        </button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

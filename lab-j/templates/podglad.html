@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="car-details" style="padding: 20px;">
+    <h2>Szczegóły pojazdu (ID: {{ car['id'] }})</h2>
+    <hr>
+    
+    <ul>
+        <li><strong>Marka:</strong> {{ car['Brand'] }}</li>
+        <li><strong>Model:</strong> {{ car['Model'] }}</li>
+        <li><strong>Rok produkcji:</strong> {{ car['Year'] }}</li>
+    </ul>
+
+    <p style="margin-top: 20px;">
+        <a href="{{ url_for('index') }}">⬅ Powrót do listy aut</a>
+    </p>
+</div>
+{% endblock %}

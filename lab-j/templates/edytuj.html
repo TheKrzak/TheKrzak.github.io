@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div style="padding: 20px; max-width: 400px;">
+    <h2>Edytuj pojazd (ID: {{ car['id'] }})</h2>
+    
+    <form method="post" style="margin-top: 20px; display: flex; flex-direction: column; gap: 15px;">
+        <div>
+            <label style="display: block; margin-bottom: 5px;"><strong>Marka (Brand):</strong></label>
+            <input type="text" name="Brand" value="{{ car['Brand'] }}" required style="width: 100%; padding: 8px;">
+        </div>
+        
+        <div>
+            <label style="display: block; margin-bottom: 5px;"><strong>Model:</strong></label>
+            <input type="text" name="Model" value="{{ car['Model'] }}" required style="width: 100%; padding: 8px;">
+        </div>
+        
+        <div>
+            <label style="display: block; margin-bottom: 5px;"><strong>Rok produkcji (Year):</strong></label>
+            <input type="number" name="Year" value="{{ car['Year'] }}" required style="width: 100%; padding: 8px;">
+        </div>
+        
+        <button type="submit" style="padding: 10px; background-color: #28a745; color: white; border: none; cursor: pointer; font-weight: bold;">
+            💾 Aktualizuj pojazd
+        </button>
+    </form>
+    
+    <p style="margin-top: 20px;">
+        <a href="{{ url_for('index') }}">⬅ Anuluj i wróć do listy</a>
+    </p>
+</div>
+{% endblock %}
